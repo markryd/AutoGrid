@@ -5,7 +5,7 @@ This is a replacement for the Grid in WPF/Silverlight and presumably things like
 
 Basically it will just fill up row by row without you having to define Grid.Row and Grid.Column on all your children, which is particularly nice when you decide you want to fiddle the layout of your page since you don't need to bloody renumber everything <sup><sub>grumble grumble grumble</sub></sup>.
 
-Show Me The Codez!!11!
+Show Me Teh Codez!!11!
 ======================
 Two auto width columns and as many auto height rows as you need. Add RowHeight="*" or ColumnWidth="*" to change the default. As a gotcha, not setting NumColumns gives you a single "*" column but setting NumColumns="1" gives you a single auto column. The former is to fit in with the standard grid a bit better. In generaly the defaults are auto though.
 ```
