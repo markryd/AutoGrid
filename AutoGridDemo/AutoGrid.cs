@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
@@ -64,25 +65,33 @@ namespace AutoGridDemo
             foreach (var child in Children)
             {
                 if (!GetAutoplace((UIElement)child)) return;
-                if (addRow)
+
+                var childColumnSpan = GetColumnSpan((FrameworkElement)child);
+                var childRowSpan = GetRowSpan((FrameworkElement)child);
+                var placed = false;
+
+                while (!placed)
                 {
-                    currentRow = GetNextRowAndAddIfRequired(currentRow);
-                    currentColumn = 0;
-                    addRow = false;
-                }
-                var cellsLeft = columnCount - currentColumn;
-                var childRowSpan = GetColumnSpan((FrameworkElement)child);
-                if (cellsLeft < childRowSpan) //can't fit this row
-                {
-                    currentRow = GetNextRowAndAddIfRequired(currentRow);
-                    currentColumn = 0;
-                }
-                SetColumn((FrameworkElement)child, currentColumn);
-                SetRow((FrameworkElement)child, currentRow);
-                currentColumn += childRowSpan;
-                if (currentColumn >= columnCount)
-                {
-                    addRow = true;
+                    var cellsLeft = columnCount - currentColumn;
+
+                    if (cellsLeft < childColumnSpan) //can't fit this row
+                    {
+                        currentRow = GetNextRowAndAddIfRequired(currentRow);
+                        currentColumn = 0;
+                        continue;
+                    }
+
+                    if (IsFull(currentRow, currentColumn, childColumnSpan))
+                    {
+                        currentColumn++;
+                        continue;
+                    }
+
+                    SetColumn((FrameworkElement)child, currentColumn);
+                    SetRow((FrameworkElement)child, currentRow);
+                    AddSpannedCells(currentRow, currentColumn, childRowSpan, childColumnSpan);
+                    currentColumn += childColumnSpan;
+                    placed = true;
                 }
             }
 
@@ -91,6 +100,29 @@ namespace AutoGridDemo
                 RowDefinitions.Last().Height = new GridLength(1, GridUnitType.Star);
             }
         }
+
+        private bool IsFull(int row, int col, int childColumnSpan)
+        {
+            
+            for (var i = col; i < col + childColumnSpan; i++)
+            {
+                if (_spannedCells.Contains(new Tuple<int, int>(row, i))) return true;
+            }
+            return false;
+        }
+
+        private void AddSpannedCells(int currentRow, int currentColumn, int rowSpan, int columnSpan)
+        {
+            for (var i = currentRow; i < currentRow + rowSpan; i++)
+            {
+                for (var j = currentColumn; j < currentColumn + columnSpan; j++)
+                {
+                    _spannedCells.Add(new Tuple<int, int>(i, j));
+                }
+            }
+        }
+
+        private readonly HashSet<Tuple<int, int>> _spannedCells = new HashSet<Tuple<int, int>>();
 
         private int GetNextRowAndAddIfRequired(int currentRow)
         {

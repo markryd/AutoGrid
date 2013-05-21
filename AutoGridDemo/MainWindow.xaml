@@ -3,21 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:a="clr-namespace:AutoGridDemo"
         Title="MainWindow" Height="768" Width="1024">
-    <a:AutoGrid Columns="*,auto,50" RowHeight="*">
+    <a:AutoGrid Columns="*,*,*,*" RowHeight="*">
         <!--Row 1-->
         <Rectangle Fill="Aqua"/>
         <Rectangle Fill="Green" Width="200"/>
-        <Rectangle Fill="Orange"/>
+        <Rectangle Fill="Orange" Width="200"/>
+        <Rectangle Fill="GreenYellow"/>
 
         <!--Row 2-->
-        <Rectangle Fill="Blue"/>
-        <Rectangle Fill="Red"/>
-        <Rectangle Fill="Purple"/>
+        <Rectangle Fill="Blue" Height="50"/>
+        <Rectangle Fill="Red" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <!--<Rectangle Fill="Purple"/>-->
+        <Rectangle Fill="Gray" Height="50"/>
 
         <!--Row 3-->
         <Rectangle Fill="Yellow" Height="50"/>
-        <Rectangle Fill="DarkCyan"/>
-        <Rectangle Fill="BlueViolet"/>
+        <!--<Rectangle Fill="DarkCyan"/>
+        <Rectangle Fill="BlueViolet"/>-->
+        <Rectangle Fill="Violet" Height="50"/>
+
+        <!--Row 4-->
+        <Rectangle Fill="Aqua"/>
+        <Rectangle Fill="Green" Width="200"/>
+        <Rectangle Fill="Orange" Width="200"/>
+        <Rectangle Fill="GreenYellow"/>
 
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Chicken" a:AutoGrid.Autoplace="False"/>
     </a:AutoGrid>
