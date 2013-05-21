@@ -17,14 +17,15 @@ namespace AutoGridDemo
     /// </summary>
     public class AutoGrid : Grid
     {
-        public AutoGrid()
-        {
-            Loaded += OnLoaded;
-        }
-
         private bool _hasLoaded;
 
-        private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
+        public override void EndInit()
+        {
+            Initialize();
+            base.EndInit();
+        }
+
+        private void Initialize()
         {
             if (!_hasLoaded && !String.IsNullOrWhiteSpace(Rows))
             {
