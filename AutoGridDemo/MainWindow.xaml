@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:a="clr-namespace:AutoGridDemo"
         Title="MainWindow" Height="768" Width="1024">
-    <a:AutoGrid Columns="*,auto,100" RowHeight="*">
+    <a:AutoGrid Columns="*,auto,50" RowHeight="*">
         <!--Row 1-->
         <Rectangle Fill="Aqua"/>
         <Rectangle Fill="Green" Width="200"/>
@@ -18,5 +18,9 @@
         <Rectangle Fill="Yellow" Height="50"/>
         <Rectangle Fill="DarkCyan"/>
         <Rectangle Fill="BlueViolet"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Chicken" a:AutoGrid.Autoplace="False"/>
     </a:AutoGrid>
+    
+
 </Window>

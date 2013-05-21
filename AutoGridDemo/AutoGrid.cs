@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -62,6 +63,7 @@ namespace AutoGridDemo
 
             foreach (var child in Children)
             {
+                if (!GetAutoplace((UIElement)child)) return;
                 if (addRow)
                 {
                     currentRow = GetNextRowAndAddIfRequired(currentRow);
@@ -75,7 +77,6 @@ namespace AutoGridDemo
                     currentRow = GetNextRowAndAddIfRequired(currentRow);
                     currentColumn = 0;
                 }
-
                 SetColumn((FrameworkElement)child, currentColumn);
                 SetRow((FrameworkElement)child, currentRow);
                 currentColumn += childRowSpan;
@@ -175,6 +176,19 @@ namespace AutoGridDemo
         {
             get { return (string)GetValue(ColumnsProperty); }
             set { SetValue(ColumnsProperty, value); }
+        }
+
+        public static readonly DependencyProperty AutoplaceProperty =
+            DependencyProperty.RegisterAttached("Autoplace", typeof (bool), typeof (AutoGrid), new PropertyMetadata(true));
+
+        public static void SetAutoplace(UIElement element, bool value)
+        {
+            element.SetValue(AutoplaceProperty, value);
+        }
+
+        public static bool GetAutoplace(UIElement element)
+        {
+            return (bool) element.GetValue(AutoplaceProperty);
         }
     }
 }
