@@ -13,8 +13,7 @@ namespace AutoGridDemo
     /// If no column definitions are given you can set NumColumns and that many will be auto-created.
     /// You can also set default row height and column width.
     /// Children are then inserted into cells one row at a time from left to right. New rows are created as required.
-    /// Handles colspan automatically but at the moment will re-use a cell that has a row span covering it.
-    /// Use something like an empty <Rectangle/> as a spacer.
+    /// Handles colspan and rowspanned children.
     /// </summary>
     public class AutoGrid : Grid
     {
