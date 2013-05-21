@@ -178,6 +178,9 @@ namespace AutoGridDemo
             set { SetValue(ColumnsProperty, value); }
         }
 
+        /// <summary>
+        /// Use to grid.row and grid.column from being ignored to manually layout a child element. (set autogrid.autoplace="false" on the child)
+        /// </summary>
         public static readonly DependencyProperty AutoplaceProperty =
             DependencyProperty.RegisterAttached("Autoplace", typeof (bool), typeof (AutoGrid), new PropertyMetadata(true));
 
