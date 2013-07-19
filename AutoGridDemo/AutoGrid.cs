@@ -59,12 +59,11 @@ namespace AutoGridDemo
 
             var currentColumn = 0;
             var currentRow = 0;
-            var addRow = false;
             var columnCount = ColumnDefinitions.Count == 0 ? 1 : ColumnDefinitions.Count; //if we have no col defs we have one col.
 
             foreach (var child in Children)
             {
-                if (!GetAutoplace((UIElement)child)) return;
+                if (!GetAutoplace((UIElement)child)) continue;
 
                 var childColumnSpan = GetColumnSpan((FrameworkElement)child);
                 var childRowSpan = GetRowSpan((FrameworkElement)child);
