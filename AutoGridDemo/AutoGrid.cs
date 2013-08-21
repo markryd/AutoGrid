@@ -73,7 +73,7 @@ namespace AutoGridDemo
                 {
                     var cellsLeft = columnCount - currentColumn;
 
-                    if (cellsLeft < childColumnSpan) //can't fit this row
+                    if (currentColumn != 0 && cellsLeft < childColumnSpan) //can't fit this row
                     {
                         currentRow = GetNextRowAndAddIfRequired(currentRow);
                         currentColumn = 0;
