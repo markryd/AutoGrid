@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AutoGrid</id>
+    <version>0.0.0.0</version>
+    <title>AutoGrid</title>
+    <authors>Mark Rydstrom</authors>
+    <owners>Mark Rydstrom</owners>
+    <projectUrl>http://github.com/markryd/autogrid</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A replacement for the Grid in WPF/Silverlight</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>wpf silverlight grid autogrid</tags>
+  </metadata>
+</package>
