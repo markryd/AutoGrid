@@ -7,7 +7,7 @@ Basically it will just fill up row by row without you having to define Grid.Row 
 
 Show Me Teh Codez!!11!
 ======================
-Two auto width columns and as many auto height rows as you need. Add RowHeight="*" or ColumnWidth="*" to change the default. As a gotcha, not setting NumColumns gives you a single "*" column but setting NumColumns="1" gives you a single auto column. The former is to fit in with the standard grid a bit better. In generaly the defaults are auto though.
+Two auto width columns and as many auto height rows as you need. Add RowHeight="*" or ColumnWidth="*" to change the default. As a gotcha, not setting NumColumns gives you a single "*" column but setting NumColumns="1" gives you a single auto column. The former is to fit in with the standard grid a bit better. In generally the defaults are auto though.
 ```
         <a:AutoGrid NumColumns="2">
             <TextBlock Text="First Row"/>
@@ -34,7 +34,7 @@ More commonly I use explicit column definitions and auto rows, but you can defin
 ```
 You can define the rows in the same way if you don't want them all auto or all *.
 
-
+[![Build status](https://ci.appveyor.com/api/projects/status/68klhicrolclel24/branch/master?svg=true)](https://ci.appveyor.com/project/markryd/autogrid/branch/master)
 
 
 
