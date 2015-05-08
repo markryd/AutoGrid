@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AutoGrid</id>
-    <version>0.0.0.0</version>
+    <version>$version$</version>
     <title>AutoGrid</title>
     <authors>Mark Rydstrom</authors>
     <owners>Mark Rydstrom</owners>
