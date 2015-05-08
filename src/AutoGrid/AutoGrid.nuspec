@@ -7,6 +7,7 @@
     <authors>Mark Rydstrom</authors>
     <owners>Mark Rydstrom</owners>
     <projectUrl>http://github.com/markryd/autogrid</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/markryd/AutoGrid/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A replacement for the Grid in WPF/Silverlight</description>
     <copyright>Copyright 2015</copyright>
