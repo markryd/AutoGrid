@@ -1,4 +1,4 @@
-AutoGrid
+AutoGrid [![Build status](https://ci.appveyor.com/api/projects/status/68klhicrolclel24/branch/master?svg=true)](https://ci.appveyor.com/project/markryd/autogrid/branch/master)
 ========
 
 This is a replacement for the Grid in WPF/Silverlight and presumably things like Win8. Having written it to scratch an itch it looks like there are others out there (even with the same name), so you probably want to use those ones. I got the inspiration from outside the Windows ecosystem (Android from memory).
@@ -34,7 +34,7 @@ More commonly I use explicit column definitions and auto rows, but you can defin
 ```
 You can define the rows in the same way if you don't want them all auto or all *.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/68klhicrolclel24/branch/master?svg=true)](https://ci.appveyor.com/project/markryd/autogrid/branch/master)
+
 
 
 
